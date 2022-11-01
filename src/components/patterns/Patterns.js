@@ -13,7 +13,7 @@ export const Patterns = () => {
     const [filteredPatterns, setfilteredPatterns] = useState([])
     const [selectedStyle, setSelectedStyle] = useState(0)
     
-    // STRETCH GOAL const [companies, setCompanies] = useState([])
+    // **STRETCH GOAL** const [companies, setCompanies] = useState([])
     // const [selectedCompany, setSelectedCompany] = useState(0)
 
 
@@ -34,7 +34,7 @@ export const Patterns = () => {
                 .then((stylesArray) => {
                     setStyles(stylesArray)
                 })
-            // STRETCH GOAL fetch(`http://localhost:8088/patternCompanies`)
+            // **STRETCH GOAL** fetch(`http://localhost:8088/patternCompanies`)
             //     .then(response => response.json())
             //     .then((companiesArray) => {
             //         setCompanies(companiesArray)
@@ -43,7 +43,7 @@ export const Patterns = () => {
         },[] )
 
     /* This function takes a pattern id then calls the navigate function which will take 
-    to the / and specific pattern id*/
+    to / and specific pattern id*/
 
         const navigateToPatternDetails = (patternId) => {
             navigate(`/${patternId}`)
@@ -70,7 +70,7 @@ export const Patterns = () => {
             setfilteredPatterns(patterns)
         } else {
             const patternStyles = patterns.filter((pattern) =>
-                pattern.stylesId === selectedStyle)
+                pattern.styleId === selectedStyle)
             setfilteredPatterns(patternStyles)
         }
     }, [selectedStyle, patterns])
@@ -87,8 +87,8 @@ export const Patterns = () => {
 
             <h3>Select by Style</h3>
 
-            {/* Stretch Goal This select filters by company when the user choses 
-            a company from the drop down menu */}
+            {/* **Stretch Goal** This select filters by company when the user choses 
+            a company from the select */}
 
             <div className="filter">
                 {/* <select
@@ -118,8 +118,8 @@ export const Patterns = () => {
                 <select
                     className="filter-select"
                     id="style-select"
-                    onChange={(style) => {
-                        setSelectedStyle(parseInt(style.target.value))
+                    onChange={(styles) => {
+                        setSelectedStyle(parseInt(styles.target.value))
                     }}
 
                 >
@@ -137,7 +137,7 @@ export const Patterns = () => {
             </div>
         
 
-{/* Mapping through the patterns array and returning the object details */}
+{/* Mapping through the filtered patterns array and returning the object details */}
 
         <div className="patterns-container">
             {filteredPatterns.map((patternObj) => {

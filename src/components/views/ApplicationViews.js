@@ -3,7 +3,7 @@ import { PatternPlace } from "../PatternPlace"
 import { Patterns } from "../patterns/Patterns"
 import { PatternForm } from "../PatternForm"
 import { PatternDetails } from "../details/PatternDetails"
-import { PatternEdit } from "../users/PatternEdit"
+import { FormEdit } from "../details/FormEdit"
 import { useNavigate } from "react-router-dom"
 
 export const ApplicationViews = () => {
@@ -20,13 +20,14 @@ export const ApplicationViews = () => {
 	return <>
 		<Routes>
 			<Route path="/" element={
+			
 				<>
 					
 						<h1>Pattern Place</h1>
 						<h3>Keep calm and sew on</h3>
 					
 
-					<Outlet />
+						<Outlet />
 
 					<div>
 						<button onClick={navigateToPatterns}>Select A Pattern</button>
@@ -42,6 +43,7 @@ export const ApplicationViews = () => {
 				<Route index path="PatternPlace" element={<PatternPlace />} />
 				<Route path="Patterns" element={<Patterns />} />
 				<Route path="PatternForm" element={<PatternForm />} />
+				<Route path="formEdit/:patternId" element={<FormEdit />} />
 				
 
 
