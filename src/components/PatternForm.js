@@ -7,7 +7,7 @@ export const PatternForm = () => {
     const [styles, setStyles] = useState([])
     const [fabrics, setFabrics] = useState([])
     const [patterns, setPatterns] = useState([])
-    // Stretch Goal const [patternsCompanies, setPatternCompanies] = useState([])
+    // **Stretch Goal** const [patternsCompanies, setPatternCompanies] = useState([])
     const [userChoices, setUserChoices] = useState({
         name: '',
         imageUrl: '',

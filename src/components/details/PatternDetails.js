@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { PatternEdit } from "../users/PatternEdit"
+
 
 export const PatternDetails = () => {
     const { patternId } = useParams()
     const [pattern, setPattern] = useState({})
 
     
-
+    const navigate = useNavigate()
     
     
 
@@ -34,7 +34,7 @@ export const PatternDetails = () => {
             </div>
             <div>
                 <button
-                    onClick={() => <PatternEdit />}
+                    onClick={() => navigate(`/formEdit/${pattern.id}`)}
                     className="edit-delete-button">Edit/Delete
                 </button>
             </div>
