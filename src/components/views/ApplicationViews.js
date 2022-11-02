@@ -17,41 +17,48 @@ export const ApplicationViews = () => {
 	const navigateToPatternForm = () => {
 		navigate('/PatternForm')
 	}
-	return <>
+
+	return (
 		<Routes>
 			<Route path="/" element={
-			
+
 				<>
+					<h1>Pattern Place</h1>
+					<h3>Keep calm and sew on</h3>
 					
-						<h1>Pattern Place</h1>
-						<h3>Keep calm and sew on</h3>
-					
 
-						<Outlet />
-
-					<div>
-						<button onClick={navigateToPatterns}>Select A Pattern</button>
-					</div>
-
-					<div>
-						<button onClick={navigateToPatternForm}>Add A Pattern</button>
-					</div>
+					<Outlet />
 				</>
 
-			} >
+			}
+			>
+				<Route path="/" element={
+					<>
+						<button onClick={navigateToPatterns}>Select A Pattern</button>
+						<button onClick={navigateToPatternForm}>Add A Pattern</button>
+					</>
+				} />
+
 				<Route path=":patternId" element={<PatternDetails />} />
 				<Route index path="PatternPlace" element={<PatternPlace />} />
 				<Route path="Patterns" element={<Patterns />} />
 				<Route path="PatternForm" element={<PatternForm />} />
 				<Route path="formEdit/:patternId" element={<FormEdit />} />
-				
-
-
 			</Route>
-			
 		</Routes>
-		
-	
-	</>
+	)
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
