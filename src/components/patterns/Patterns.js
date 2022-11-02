@@ -19,12 +19,12 @@ export const Patterns = () => {
 
     const navigate = useNavigate()
    
-
+    const loggedInUserId =JSON.parse(localStorage.getItem('pattern_user')).id
 
 // This useEffect fetches patterns, and styles from API
     useEffect(
         () => {
-            fetch(`http://localhost:8088/patterns`)
+            fetch(`http://localhost:8088/patterns?userId=${loggedInUserId}`)
                 .then(response => response.json())
                 .then((patternsArray) => {
                     setPatterns(patternsArray)

@@ -5,9 +5,10 @@ import { useNavigate, navigate, useParams } from "react-router-dom"
 export const FormEdit = () => {
     const [styles, setStyles] = useState([])
     const [fabrics, setFabrics] = useState([])
-    // const [patterns, setPatterns] = useState([])
     const { patternId } = useParams()
     
+    
+const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
 
     const [userChoices, setUserChoices] = useState({
         name: "",
@@ -25,7 +26,7 @@ export const FormEdit = () => {
 
     const handlePatternDelete = (event) => {
         event.preventDefault()
-
+// This fetch deletes a pattern entry and then navigates to home page
         return fetch(`http://localhost:8088/patterns/${patternId}`, {
             method: "DELETE",
             
@@ -37,11 +38,11 @@ export const FormEdit = () => {
             })
     }
 
-
+// This function handles when a user updates a pattern object
 
     const handleUpdateButtonClick = (event) => {
         event.preventDefault()
-
+// This sends an http request to the api in order for the object details to be updated
         return fetch(`http://localhost:8088/patterns/${patternId}`, {
             method: "PUT",
             headers: {
@@ -54,7 +55,7 @@ export const FormEdit = () => {
                 navigate("/patterns")
             })
     }
-
+// This useEffect sets the users choices
     useEffect(() => {
         fetch(`http://localhost:8088/patterns/${patternId}`)
             .then(response => response.json())

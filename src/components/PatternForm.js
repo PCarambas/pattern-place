@@ -8,11 +8,13 @@ export const PatternForm = () => {
     const [fabrics, setFabrics] = useState([])
     const [patterns, setPatterns] = useState([])
     // **Stretch Goal** const [patternsCompanies, setPatternCompanies] = useState([])
+    const loggedInUserId =JSON.parse(localStorage.getItem('pattern_user')).id
     const [userChoices, setUserChoices] = useState({
         name: '',
         imageUrl: '',
         styleId: 0,
-        fabricId: 0
+        fabricId: 0,
+        userId: loggedInUserId
     })
 
     const navigate = useNavigate()
