@@ -26,16 +26,22 @@ export const PatternDetails = () => {
 
     return (
         <>
-            <div className="pattern-detail-container">
-                <h3 className="pattern-detail-name">Pattern Details for {pattern.name}</h3>
+            <div className="flex justify-center flex-col text-orange-200 text-center pb-4">
+                <h3 className="text-orange-300">Pattern Details for {pattern.name}</h3>
+
+                <div className="flex justify-center">
                 <img src={pattern.imageUrl} alt={pattern.name} className="pattern-img" />
+                </div>
+
                 <div className="pattern-details">Styles: {pattern.style?.type}</div>
                 <div className="pattern-details">Fabric: {pattern.fabric?.type}</div>
+
             </div>
-            <div>
+
+            <div className="flex justify-center" >
                 <button
                     onClick={() => navigate(`/formEdit/${pattern.id}`)}
-                    className="edit-delete-button">Edit/Delete
+                    className="flex justify-center mb-8 rounded-lg border-2 border-orange-300 text-orange-200 p-2">Edit/Delete
                 </button>
             </div>
         </>

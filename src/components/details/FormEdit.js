@@ -42,6 +42,7 @@ const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
 
     const handleUpdateButtonClick = (event) => {
         event.preventDefault()
+
 // This sends an http request to the api in order for the object details to be updated
         return fetch(`http://localhost:8088/patterns/${patternId}`, {
             method: "PUT",
@@ -94,39 +95,42 @@ const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
 
     return (
         <>
-            <form className="pattern-form">
-                <h2 className="pattern-form-title">Edit Your Pattern</h2>
+            <form className="flex justify-center">
+            <div className="">
+                <h2 className="pt-8 pb-6
+					 text-orange-300 text-3xl">Edit Your Pattern</h2>
                 {/* These fieldsets creates space for the user to input information. The onChange along with useState 
          allows to set state and listen for change. The onChange allows to get an event back,
          then create a copy and set it in the set state variable. Added checked logic for radio buttons so only
          one choice could be checked at a time */}
+                <div className="flex flex-col space-y-6">
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="name">Pattern Name: </label>
+                    <div className="text-orange-500">
+                        {/* <label htmlFor="name">Pattern Name: </label> */}
                         <input
                             required
                             id="name"
                             type="text"
-                            className="form-control"
-                            // placeholder="Pattern Name"
+                            className="text-center bg-yellow-50 rounded-lg border-2 border-orange-300 p-2"
                             value={userChoices.name}
                             onChange={(event) => {
                                 const copy = { ...userChoices }
                                 copy.name = event.target.value
                                 setUserChoices(copy)
                             }}
+                            
                         />
                     </div>
                 </fieldset>
 
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="name">Image URL: </label>
+                    <div className="text-orange-500">
+                        {/* <label htmlFor="name">Image URL: </label> */}
                         <input
                             required
                             id="imageUrl"
                             type="text"
-                            className="form-control"
+                            className="text-center bg-yellow-50 rounded-lg border-2 border-orange-300 p-2"
                             // placeholder={userChoices.imageUrl}
                             value={userChoices.imageUrl}
                             onChange={(event) => {
@@ -138,7 +142,7 @@ const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
                     </div>
                 </fieldset>
                 <fieldset>
-                    <div className="form-group">
+                    <div className="text-orange-200">
                         <div>Style Choices: </div>
                         {styles.map((stylesObj) => {
                             return (
@@ -160,7 +164,7 @@ const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
                     </div>
                 </fieldset>
                 <fieldset>
-                    <div className="form-group">
+                    <div className="text-orange-200">
                         <div>Fabric Type: </div>
                         {fabrics.map((fabricObj) => {
                             return (
@@ -182,10 +186,14 @@ const loggedInUser =JSON.parse(localStorage.getItem('pattern_user')).id
                         })}
                     </div>
                 </fieldset>
-                <button className="btn"
+                <button className="rounded-lg border-2 border-orange-300 text-orange-200 p-2"
                     onClick={(event) => { handleUpdateButtonClick(event) }}>Save Your Edit</button>
-                <button className="btn"
-                    onClick={(event) => { handlePatternDelete(event) }}>Delete Pattern</button>    
+                    <div className="flex justify-center">
+                <button className="mb-8 rounded-lg border-4 border-orange-300 text-orange-200 p-2 "
+                    onClick={(event) => { handlePatternDelete(event) }}>Delete Pattern</button> 
+                    </div>
+                </div> 
+                </div>   
             </form>
         </>
     )

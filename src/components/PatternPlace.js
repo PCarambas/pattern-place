@@ -6,7 +6,7 @@ import { NavBar } from "./nav/NavBar"
 
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-import "./PatternPlace.css"
+// import "./PatternPlace.css"
 
 
 export const PatternPlace = () => {
@@ -15,8 +15,12 @@ export const PatternPlace = () => {
 
 	return <>
 		<Routes>
+			
+			
 			<Route path="/login" element={<Login />} />
+
 			<Route path="/register" element={<Register />} />
+			
 
 			<Route path="*" element={
 				<Authorized>
@@ -32,7 +36,7 @@ export const PatternPlace = () => {
 		</Routes>
 
 		
-	</>
+		</>
 }
 
 

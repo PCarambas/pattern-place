@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
+// import "./Login.css"
 
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",
         fullName: "",
-        // isStaff: false
+        
     })
     let navigate = useNavigate()
 
@@ -23,7 +23,7 @@ export const Register = (props) => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem("pattern_user", JSON.stringify({
                         id: createdUser.id,
-                        // staff: createdUser.isStaff
+                        
                     }))
 
                     navigate("/")
@@ -56,30 +56,27 @@ export const Register = (props) => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Pattern Place</h1>
+                <h1 className="flex justify-center text-orange-200/100 text-4xl 
+					font-thin italic pb-10">Please Register for Pattern Place</h1>
+                <div className="text-orange-200 mb-6">
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}
                            type="text" id="fullName" className="form-control"
                            placeholder="Enter your name" required autoFocus />
                 </fieldset>
+                </div>
+                <div className="text-orange-200 mb-6">
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateCustomer}
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
-                {/* <fieldset>
-                    <input onChange={(evt) => {
-                        const copy = {...customer}
-                        copy.isStaff = evt.target.checked
-                        setCustomer(copy)
-                    }}
-                        type="checkbox" id="isStaff" />
-                    <label htmlFor="email"> I am an employee </label>
-                </fieldset> */}
+                </div>
+              
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="mt-4 rounded-lg border-2 border-orange-300 text-orange-200 p-2" type="submit"> Register </button>
                 </fieldset>
             </form>
         </main>
