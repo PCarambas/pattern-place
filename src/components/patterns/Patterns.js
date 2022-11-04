@@ -82,10 +82,12 @@ export const Patterns = () => {
 
     return (<>
 
-        <div className="select-container">
-            <h2>Select A Pattern</h2>
+        <div className="m-8">
+            <h2 className="flex justify-center pb-2
+					 text-orange-300 text-3xl">Select A Pattern</h2>
 
-            <h3>Select by Style</h3>
+            {/* <h3 className="flex justify-center px-8 pt-14 pb-2
+					 text-orange-200 text-2xl">Select by Style</h3> */}
 
             {/* **Stretch Goal** This select filters by company when the user choses 
             a company from the select */}
@@ -114,16 +116,18 @@ export const Patterns = () => {
 
         {/* This select filters by style when user chooses a style from the drop down */}
 
-        <div className="styles-filter">
+        <div className="flex justify-center text-orange-400 pb-10">
                 <select
-                    className="filter-select"
+                    className=" bg-yellow-50 rounded-lg border-2 border-orange-300 p-2"
                     id="style-select"
                     onChange={(styles) => {
                         setSelectedStyle(parseInt(styles.target.value))
                     }}
 
                 >
+                    
                     <option key="0" value="0">All Styles</option>
+                    
                     {
                         styles.map((styles) => {
                             return (
@@ -139,7 +143,7 @@ export const Patterns = () => {
 
 {/* Mapping through the filtered patterns array and returning the object details */}
 
-        <div className="patterns-container">
+        <div className="flex justify-center flex-wrap text-orange-200 text-center ">
             {filteredPatterns.map((patternObj) => {
                 return (
                     <div className="pattern-card" key={patternObj.id}>
