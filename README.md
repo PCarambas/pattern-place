@@ -1,6 +1,6 @@
 # Pattern Place
 
-**_Pattern Place_* solves the problem of allowing its user to organize their sewing patterns. Pattern Place is an application that will offer its user the ability to add patterns to the JSON database and sort through those patterns based on criteria such as pattern name, pattern style (ex. topsm bottoms, dresses) and required fabric. It will allow the user to see what patterns they already own lessening the chance of double purchases. It will show the user what type of fabric is required for a specific pattern to simplify project shopping and show the details of a chosen pattern 
+**_Pattern Place_* solves the problem of allowing its user to organize their sewing patterns. Pattern Place is an application that will offer its user the ability to add patterns to the JSON database and sort through those patterns based on criteria such as pattern name, pattern style (ex. tops, bottoms, dresses) and required fabric. It will allow the user to see what patterns they already own, lessening the chance of double purchases. It will show the user what type of fabric is required for a specific pattern to simplify project shopping and show the details of a chosen pattern 
 
 
 **JSON database required prior to running app:** [https://github.com/PCarambas/pattern-place-api](https://github.com/PCarambas/pattern-place-api)
