@@ -1,3 +1,59 @@
+# Pattern Place
+
+**_Pattern Place_* solves the problem of allowing its user to organize their sewing patterns. Pattern Place is an application that will offer its user the ability to add patterns to the JSON database and sort through those patterns based on criteria such as pattern name, pattern style (ex. topsm bottoms, dresses) and required fabric. It will allow the user to see what patterns they already own lessening the chance of double purchases. It will show the user what type of fabric is required for a specific pattern to simplify project shopping and show the details of a chosen pattern 
+
+
+**JSON database required prior to running app:** [https://github.com/PCarambas/pattern-place-api](https://github.com/PCarambas/pattern-place-api)
+
+
+<table>
+  <tr>
+    <td>
+<a href="src/assets/PatternPlace.png"><img src="src/assets/PatternPlace.png" alt="pattern-place" border="0"></a>
+    </td>
+    <td>
+    <a href="src/assets/SelectPattern.png"><img src="src/assets/SelectPattern.png" alt="select-pattern" border="0"></a>
+    </td>
+    <td>
+      <a href="src/assets/AddPattern.png"><img src="src/assets/AddPattern.png" alt="add-pattern" border="0"></a>
+    </td>
+  </tr>
+</table>
+
+
+
+## Built With
+
+- JavaScript
+- React
+- HTML
+- TailwindCSS
+- Figma
+- DbDiagram
+
+
+
+## Project Planning
+
+<table>
+  <tr>
+    <td valign="top"height="500" width="400">
+      <a href="https://www.figma.com/file/JnDVNhusiEM6dMovr5HyeD/Pattern-Place?node-id=0%3A1&t=a4EL6nvW7q6yJFMF-1" target="_blank">Wireframe (Figma)</a>
+
+[![Pattern Place Wireframe](src/assets/PPWireframe.png)](https://www.figma.com/file/JnDVNhusiEM6dMovr5HyeD/Pattern-Place?node-id=0%3A1&t=a4EL6nvW7q6yJFMF-1) 
+
+<td valign="top">
+  <a href="https://dbdiagram.io/d/634f0a9747094101958d6a96" target="_blank">ERD (DbDiagram)</a>
+  
+[![Pattern Place ERD](src/assets/PP-ERD.png)](https://dbdiagram.io/d/634f0a9747094101958d6a96)
+
+  </td>
+  </tr>
+  </table>
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
